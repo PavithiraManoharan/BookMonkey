@@ -10,6 +10,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+  isLoading = false;
   foundBooks: Book[] = [];
 
   @Output() bookSelected = new EventEmitter<Book>();
@@ -21,9 +22,10 @@ export class SearchComponent implements OnInit {
     this.keyup.pipe(
       debounceTime(500),
       distinctUntilChanged(),
-      switchMap(searchTerm => this.bs.getAllSearch(searchTerm))
+      tap(() => this.isLoading = true),
+      switchMap(searchTerm => this.bs.getAllSearch(searchTerm)),
+      tap(() => this.isLoading = false)
       )
       .subscribe(books => this.foundBooks = books);
   }
-
 }

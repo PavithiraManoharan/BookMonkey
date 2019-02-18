@@ -10,6 +10,7 @@ import { BookStoreService } from '../shared/book-store.service';
 export class BookListComponent implements OnInit {
   books: Book[];
 
+  // Important: Constructor initializes Dependency of Service
   constructor(private bs: BookStoreService) { }
 
   ngOnInit() {
