@@ -1,0 +1,36 @@
+<div class="ui main container">
+  <h2 class="ui dividing header">Registrierung</h2>
+  <form class="ui form" #registrationForm="ngForm" (ngSubmit)="register(registrationForm.value)">
+    <div ngModelGroup="fullname">
+    <div class="field">
+      <label>Vorname</label>
+      <input type="text" name="firstname" placeholder="First Name" [(ngModel)]="firstname">
+    </div>
+    <div class="field">
+      <label>Nachname</label>
+      <input type="text" name="lastname" placeholder="Last Name" [(ngModel)]="lastname">
+    </div>
+  </div>
+    <div class="field">
+      <label>Benutzername</label>
+      <input type="text" name="username" placeholder="User Name" [(ngModel)]="username">
+    </div>
+    <div class="field">
+      <label>Passwort</label>
+      <input type="password" name="password" placeholder="Password" ngModel #password="ngModel" required minlength="8">
+    </div>
+    <div class="ui red message field" *ngIf="password.invalid && password.dirty">
+        Password must have a minimum of 8 characters.
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+  <div class="entered-info">
+    <h3>You just entered:</h3>
+    <ul>
+      <li>Vorname: {{firstname}}</li>
+      <li>Nachname: {{lastname}}</li>
+      <li>Benutzername: {{username}}</li>
+      <li>Passwort: {{password.value}}</li>
+    </ul>
+  </div>
+</div>

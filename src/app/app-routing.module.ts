@@ -1,3 +1,4 @@
+import { RegisterComponent } from './register/register.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +22,10 @@ export const routes: Routes = [
   {
     path: 'books/:isbn',
     component: BookDetailsComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 
