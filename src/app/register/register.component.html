@@ -19,7 +19,7 @@
       <label>Passwort</label>
       <input type="password" name="password" placeholder="Password" ngModel #password="ngModel" required minlength="8">
     </div>
-    <div class="ui red message field" *ngIf="password.invalid && password.dirty">
+    <div class="ui negative message field" *ngIf="password.invalid && password.dirty">
         Password must have a minimum of 8 characters.
     </div>
     <button class="ui button" type="submit">Submit</button>
