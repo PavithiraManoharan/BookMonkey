@@ -52,7 +52,7 @@ export class BookStoreService {
 
   create(book: Book): Observable<any> {
     return this.http
-      .post(`${this.api}/book`, book, { responseType: 'text' })
+      .post(`${this.api}/books`, book, { responseType: 'text' })
       .pipe(
         catchError(this.errorHandler)
       );
@@ -60,7 +60,7 @@ export class BookStoreService {
 
   update(book: Book): Observable<any> {
     return this.http
-      .put(`${this.api}/book/${book.id}`, book, { responseType: 'text' })
+      .put(`${this.api}/books/${book.id}`, book, { responseType: 'text' })
       .pipe(
         catchError(this.errorHandler)
       );
@@ -68,7 +68,7 @@ export class BookStoreService {
 
   remove(id: string): Observable<any> {
     return this.http
-      .delete(`${this.api}/book/${id}`, { responseType: 'text' })
+      .delete(`${this.api}/books/${id}`, { responseType: 'text' })
       .pipe(
         catchError(this.errorHandler)
       );
