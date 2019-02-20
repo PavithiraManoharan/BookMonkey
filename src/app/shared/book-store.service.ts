@@ -40,9 +40,9 @@ export class BookStoreService {
 
   }
 
-  getSingle(isbn: string): Observable<Book> {
+  getSingle(id: string): Observable<Book> {
     return this.http
-      .get<BookRaw>(`${this.api}/book/${isbn}`)
+      .get<BookRaw>(`${this.api}/books/${id}`)
       .pipe(
         retry(3),
         map(rawBook => BookFactory.fromObject(rawBook)),
@@ -60,15 +60,15 @@ export class BookStoreService {
 
   update(book: Book): Observable<any> {
     return this.http
-      .put(`${this.api}/book/${book.isbn}`, book, { responseType: 'text' })
+      .put(`${this.api}/book/${book.id}`, book, { responseType: 'text' })
       .pipe(
         catchError(this.errorHandler)
       );
   }
 
-  remove(isbn: string): Observable<any> {
+  remove(id: string): Observable<any> {
     return this.http
-      .delete(`${this.api}/book/${isbn}`, { responseType: 'text' })
+      .delete(`${this.api}/book/${id}`, { responseType: 'text' })
       .pipe(
         catchError(this.errorHandler)
       );

@@ -1,5 +1,5 @@
 export interface BookRaw {
-  isbn: string;
+  id: string;
   title: string;
   authors: string[];
   published: string;
