@@ -3,7 +3,7 @@ export { Thumbnail } from './thumbnail';
 
 export class Book {
   constructor(
-    public id: string,
+    public isbn: string,
     public title: string,
     public authors: string[],
     public published: Date,

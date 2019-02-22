@@ -7,7 +7,7 @@ export class BookFactory {
 
   static fromObject(rawBook: BookRaw | any): Book {
     return new Book(
-      rawBook.id,
+      rawBook.isbn,
       rawBook.title,
       rawBook.authors,
       typeof (rawBook.published) === 'string' ?

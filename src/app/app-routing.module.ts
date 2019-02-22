@@ -22,7 +22,7 @@ export const routes: Routes = [
     component: BookListComponent
   },
   {
-    path: 'books/:id',
+    path: 'books/:isbn',
     component: BookDetailsComponent
   },
   {

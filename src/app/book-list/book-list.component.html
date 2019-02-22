@@ -1,7 +1,7 @@
 <div class="ui grid container">
   <div class="twelve wide column">
     <div class="ui middle aligned selection divided list">
-      <a class="bm-book-list-item item" *ngFor="let b of books" [book]="b" [routerLink]="b.id"></a>
+      <a class="bm-book-list-item item" *ngFor="let b of books" [book]="b" [routerLink]="b.isbn"></a>
     </div>
   </div>
 </div>
