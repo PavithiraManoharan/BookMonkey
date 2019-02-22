@@ -2,7 +2,7 @@ import { BookStoreService } from './shared/book-store.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 
@@ -12,7 +12,6 @@ import { BookListItemComponent } from './book-list-item/book-list-item.component
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
-import { RegisterComponent } from './register/register.component';
 import { BookFormComponent } from './book-form/book-form.component';
 
 @NgModule({
@@ -23,14 +22,13 @@ import { BookFormComponent } from './book-form/book-form.component';
     BookDetailsComponent,
     HomeComponent,
     SearchComponent,
-    RegisterComponent,
     BookFormComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    ReactiveFormsModule,
     DateValueAccessorModule
   ],
   providers: [
